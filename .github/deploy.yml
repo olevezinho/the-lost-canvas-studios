@@ -1,0 +1,4 @@
+# GitHub Pages (projeto → base-href com o nome do repo)
+ng build --base-href /the-lost-canvas-studios/
+cp dist/the-lost-canvas-studios/browser/index.html dist/the-lost-canvas-studios/browser/404.html
+npx angular-cli-ghpages --dir=dist/the-lost-canvas-studios/browser
