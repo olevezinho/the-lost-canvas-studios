@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it } from 'vitest';
 import { TestBed } from '@angular/core/testing';
 import { App } from './app';
 
@@ -19,6 +20,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, the-lost-canvas-studios');
+    expect(compiled.querySelector('h1')?.textContent).toContain('The Lost Canvas Studios®');
   });
 });
