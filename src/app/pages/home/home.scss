@@ -3,36 +3,39 @@
   display: grid;
   place-content: center;
   text-align: center;
-  padding-inline: clamp(1rem, 6vw, 2rem); // side margin in any viewport
+  padding-inline: clamp(1rem, 6vw, 2rem); // margem lateral em qualquer viewport
 }
 
 h1 {
   font-family: 'Libertinus Serif', serif;
   font-weight: 550;
-  // minimum mobile readable maximum for desktop
-  font-size: clamp(2.5rem, 6vw + 0.5rem, 3.5rem);
-  letter-spacing: 0.20em;
+  font-size: clamp(2.5rem, 6vw + 0.5rem, 3.5rem); // mínimo legível mobile · máximo desktop
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   max-width: 24ch;
   color: #fff;
 }
 
-// Mobile
+p {
+  margin: 0;
+}
+
+// Landscape (largura > altura): o título nunca colapsa
 @media (orientation: landscape) {
   h1 {
     max-width: none;
-    white-space: nowrap; // sobrepõe o text-wrap: balance
+    white-space: nowrap;
     overflow-wrap: normal;
     font-size: min(4.5vw, 6rem); // encolhe em ecrãs largos e baixos; mantém o teto no desktop
   }
 
   p {
     font-size: min(1.5vw, 1.25rem);
-    opacity: 0.80;
+    opacity: 0.8;
   }
 }
 
-// Animations
+// Typewriter — a frase tem 41 caracteres; pausa após "Thread by thread," (17ch)
 .typewriter {
   display: inline-block;
   overflow: hidden;
@@ -43,26 +46,37 @@ h1 {
   color: #fff;
   opacity: 0.75;
   font-size: clamp(0.75rem, 3vw, 1rem); // garante 41ch dentro de viewports pequenos
-  color: #fff;
-  opacity: 0.75;
   animation:
     typing 3.4s linear 0.5s forwards,
     caret 0.9s step-end 0.5s infinite;
 }
 
-// Datilografia com ritmo natural: escreve até à vírgula, pausa, continua
 @keyframes typing {
-  0%   { width: 0;    animation-timing-function: steps(17, end); }
-  37%  { width: 15ch; } // "Thread by thread," — pausa de ~0.5s
-  55%  { width: 15ch; animation-timing-function: steps(24, end); }
-  100% { width: 35ch; }
+  0% {
+    width: 0;
+    animation-timing-function: steps(17, end);
+  }
+
+  37% {
+    width: 15ch;
+  }
+
+  // "Thread by thread," — pausa de ~0.5s
+  55% {
+    width: 15ch;
+    animation-timing-function: steps(24, end);
+  }
+
+  100% {
+    width: 35ch;
+  }
 }
 
 @keyframes caret {
-  50% { border-color: transparent; }
+  50% {
+    border-color: transparent;
+  }
 }
-
-// ... media query (orientation: landscape) inalterada ...
 
 @media (prefers-reduced-motion: reduce) {
   .typewriter {
