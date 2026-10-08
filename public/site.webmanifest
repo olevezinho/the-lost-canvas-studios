@@ -1,6 +1,6 @@
 {
   "name": "The Lost Canvas Studios",
-  "short_name": "TLC Studios",
+  "short_name": "TLCS",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#dadada",
   "background_color": "#ffffff",
-  "display": "browser"
+  "display": "standalone"
 }
