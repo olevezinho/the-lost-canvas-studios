@@ -1,12 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-// ... existing code ...
-
 @font-face {
   font-family: 'Libertinus Serif';
   src: url('./assets/fonts/libertinus-serif-regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap; // texto visível enquanto a fonte carrega (NFR performance)
+  font-display: swap;
 }
 
 @font-face {
@@ -15,6 +12,12 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
